@@ -21,6 +21,55 @@ body {
 
 h1 { margin-bottom: 10px; font-size: 1.5rem; }
 
+.duration-selector {
+    margin-bottom: 20px;
+}
+
+.presets {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.preset {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    color: #edf2f4;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.preset:hover {
+    background: #edf2f4;
+    color: #2b2d42;
+}
+
+.preset.active {
+    background: #ef233c;
+    color: white;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+#duration {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #edf2f4;
+    border-radius: 3px;
+    background: #2b2d42;
+    color: #edf2f4;
+    text-align: center;
+}
+
 #timer {
     font-size: 4rem;
     font-weight: bold;
