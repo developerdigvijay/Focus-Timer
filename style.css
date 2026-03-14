@@ -62,6 +62,7 @@ label {
 
 #duration {
     width: 60px;
+
     padding: 5px;
     border: 1px solid #edf2f4;
     border-radius: 3px;
@@ -75,6 +76,23 @@ label {
     font-weight: bold;
     margin: 20px 0;
     color: #fff;
+    transition: all 0.3s ease;
+}
+
+#timer.warning {
+    color: #ff6b6b;
+    animation: pulse 0.6s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.8;
+        transform: scale(1.03);
+    }
 }
 
 .controls button {
@@ -92,3 +110,4 @@ label {
 #start { background-color: #ef233c; color: white; }
 #stop { background-color: #edf2f4; color: #2b2d42; }
 #reset { background-color: transparent; border: 1px solid #edf2f4; color: white; }
+

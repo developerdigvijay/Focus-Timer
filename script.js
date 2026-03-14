@@ -13,6 +13,14 @@ function updateDisplay() {
     const seconds = timeLeft % 60;
     const displayString = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     timerDisplay.textContent = displayString;
+
+    // Visual warning for last 10 seconds
+    if (timeLeft <= 10 && timeLeft > 0) {
+        timerDisplay.classList.add('warning');
+        statusDisplay.textContent = '⏰ Finishing soon! Hurry up!';
+    } else {
+        timerDisplay.classList.remove('warning');
+    }
 }
 
 function setDuration(minutes) {
@@ -21,6 +29,9 @@ function setDuration(minutes) {
     durationInput.value = min;
     updateDisplay();
     statusDisplay.textContent = `Set to ${min} minutes. Ready to focus?`;
+
+    // Clear warning
+    timerDisplay.classList.remove('warning');
 
     // Update active preset
     presetButtons.forEach(btn => btn.classList.remove('active'));
@@ -33,6 +44,7 @@ function startTimer() {
     if (isRunning) return;
     isRunning = true;
     statusDisplay.textContent = "Focus in progress...";
+    timerDisplay.classList.remove('warning');
     timerInterval = setInterval(() => {
         timeLeft--;
         updateDisplay();
@@ -49,6 +61,7 @@ function stopTimer() {
     clearInterval(timerInterval);
     isRunning = false;
     statusDisplay.textContent = "Timer paused.";
+    timerDisplay.classList.remove('warning');
 }
 
 function resetTimer() {
