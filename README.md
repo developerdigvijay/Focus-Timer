@@ -18,7 +18,7 @@ start index.html
 Open `index.html` in any browser.
 
 ## Screenshots
-*(Add screenshots here)*
+![Preview](image.png)
 
 ## Usage
 1. Click preset or enter custom minutes.
